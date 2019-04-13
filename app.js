@@ -34,13 +34,24 @@ app.get('/', (request, response) => {
 });
 
 // rota pra criar
-const createPerson = require('./routes/Person/create');
+const createPerson = require('./controller/Person/create');
 
 app.get('/person/create', createPerson);
 
-const readPerson = require('./routes/Person/read');
+// rota de leitura
+const readPerson = require('./controller/Person/read');
 
 app.get('/person/read', readPerson);
+
+// rota de update
+const updatePerson = require('./controller/Person/update');
+
+app.get('/person/update/:personId', updatePerson);
+
+// rota de deletar
+const deletePerson = require('./controller/Person/delete');
+
+app.get('/person/delete/:personId', deletePerson);
 
 app.listen(3000, 'localhost', (error) => {
   if (error) {
