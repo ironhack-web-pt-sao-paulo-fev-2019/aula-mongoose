@@ -3,7 +3,7 @@ const PersonModel = require('../../model/Person/PersonModel');
 const readPerson = (request, response) => {
     const persons = PersonModel.find()
     .then(data => 
-        response.send(JSON.stringify(data)))
+        response.render('read', {data}))
     .catch(err => console.log(err));
 }
 

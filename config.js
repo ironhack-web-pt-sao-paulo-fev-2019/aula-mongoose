@@ -2,7 +2,15 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const mongoose = require('mongoose');
-const Routes = require('./routes');
+const bodyParser = require('body-parser');
+
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+hbs.registerPartials(__dirname + '/views/partials');
+
 
 const dbName = 'aula-mongoose';
 
@@ -16,5 +24,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`, (err) => {
 
 module.exports = {
     app,
-    mongoose
+    mongoose,
+    hbs,
+    bodyParser
 }
