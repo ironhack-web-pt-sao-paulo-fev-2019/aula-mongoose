@@ -1,28 +1,4 @@
-const mongoose = require("mongoose");
-const dbName = "aula-mongoose";
-const express = require('express');
-const createPerson = require('./routes/Person/Create');
-const readPerson = require('./routes/Person/Read');
-const PersonModel = require('./model/Person/PersonModel');
-const app = express();
-
-mongoose.connect(`mongodb://localhost/${dbName}`, error => {
-  if (error) {
-    console.log("Não consegui conectar");
-  } else {
-    console.log(`CONECTAMOS EM ${dbName}`);
-  }
-});
-
-app.get('/', (request, response) => {
-  response.send('Minha Primeira Rota');
-});
-
-//Rota para Criar
-app.get('/person/create', createPerson);
-
-//Rota para Ler
-app.get('/person/read', readPerson);
+const  app  = require('./routes');
 
 app.listen(3000, 'localhost', (err) => {
   if (err) {
@@ -31,3 +7,4 @@ app.listen(3000, 'localhost', (err) => {
     console.log('Romulando na porta 3000');
   }
 });
+
