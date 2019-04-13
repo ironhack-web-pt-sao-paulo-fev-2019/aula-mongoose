@@ -1,5 +1,5 @@
 const deletePerson = (request, response) => {
-    response.send('Estou na rota do delete');
-};
-
-module.exports = deletePerson;
+    response.send('Estou na rota de delete');
+  }
+  
+  module.exports = deletePerson;

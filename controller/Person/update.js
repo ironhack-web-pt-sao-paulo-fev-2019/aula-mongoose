@@ -1,5 +1,6 @@
 const updatePerson = (request, response) => {
-    response.send('Estou na rota do update');
-};
-
-module.exports = updatePerson;
+    response.send('Estou na rota de update');
+  }
+  
+  module.exports = updatePerson;
+  
