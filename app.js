@@ -1,7 +1,10 @@
 const express = require('express');
+const app = express();
+
 const hbs = require('hbs');
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+const PersonModel = require('./model/Person/PersonModel');
 
 const dbName = 'aula-mongoose';
 
@@ -15,11 +18,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`, (err) => {
 })
 
 // Passo 2 - configurar Model
-const PersonModel = mongoose.model('Person', new Schema({
-    name: String,
-    age: Number,
-    gender: String
-}));
+
 
 // Passo 3 - Configurando um documento
 const personDoc = {
@@ -41,3 +40,13 @@ PersonModel.create(personDoc, (err) => {
 const persons = PersonModel.find()
     .then(data => console.log(data))
     .catch(err => console.log(err))
+
+// Passo 6 - rotas
+const HomeController = (request, response) => {
+    response.send('Minha rota')
+}
+app.get('/', HomeController);
+
+app.listen(3000, 'localhost', (err) => {
+    err ? console.log(err) : console.log('Conectado') 
+});
