@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 const PersonModel = require('./model/Person/PersonModel');
 const createPerson = require('./routes/Person/create');
 const readPerson = require('./routes/Person/read');
+const updatePerson = require('./routes/Person/update');
+const deletePerson = require('./routes/Person/delete');
+
 
 const dbName = 'aula-mongoose';
 
@@ -30,6 +33,12 @@ app.get('/person/create', createPerson);
 
 // R - Rota para ler
 app.get('/person/read', readPerson);
+
+// U - Rota para atualizar
+app.get('/person/update/:personId', updatePerson);
+
+// d - Rota para atualizar
+app.get('/person/delete/:personId', deletePerson);
 
 // Conectar Servidor
 app.listen(3000, 'localhost', (err) => {
