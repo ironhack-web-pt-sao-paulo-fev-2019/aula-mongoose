@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const dbName = "aula-mongoose";
 const express = require('express');
 const createPerson = require('./routes/Person/Create');
+const readPerson = require('./routes/Person/Read');
 const PersonModel = require('./model/Person/PersonModel');
 const app = express();
 
-
-// Passo 1 - Conectamos ao banco de dados
 mongoose.connect(`mongodb://localhost/${dbName}`, error => {
   if (error) {
     console.log("Não consegui conectar");
@@ -23,9 +22,7 @@ app.get('/', (request, response) => {
 app.get('/person/create', createPerson);
 
 //Rota para Ler
-app.get('/person/read', (request, response) => {
-  response.send('Estou na rota de leitura');
-});
+app.get('/person/read', readPerson);
 
 app.listen(3000, 'localhost', (err) => {
   if (err) {
