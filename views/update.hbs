@@ -1,0 +1,9 @@
+
+<h1>Atualizar Usuário {{name}}</h1>
+
+<form action="/person/update/{{this.id}}" method="POST">
+<input name="name" value="{{this.name}}">
+<input name="age" type="number" value="{{this.age}}">
+<input name="gender" value="{{this.gender}}">
+<button type="submit">CRIAR</button>
+</form>

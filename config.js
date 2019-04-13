@@ -19,7 +19,6 @@ mongoose.connect(`mongodb://localhost/${dbName}`, (err) => {
         console.log('Deu erro!')
     :
         console.log(`Conectamos no db: ${dbName}!`)
-    
 })
 
 module.exports = {
