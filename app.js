@@ -36,3 +36,8 @@ PersonModel.create(personDoc, (err) => {
         console.log(`Documento ${personDoc} salvo!`)
     }
 })
+
+// Passo 5 - Consultando
+const persons = PersonModel.find()
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
