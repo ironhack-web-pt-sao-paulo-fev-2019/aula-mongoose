@@ -1,8 +1,8 @@
 const PersonModel = require('../../model/Person/PersonModel');
 const createPerson = (request, response) => {
   const personDoc = {
-    name: 'José Luiz',
-    age: 19,
+    name: 'Fred',
+    age: 30,
     gender: 'M'
   };
   
