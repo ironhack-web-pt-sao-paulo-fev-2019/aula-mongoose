@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 
@@ -17,11 +18,7 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
 });
 
 // passo 2 - configurar o model
-const PersonModel = mongoose.model('Person', new Schema({
-  name: { type: String, unique: true },
-  age: Number,
-  gender: String,
-}));
+const PersonModel = require('./model/Person/PersonModel');
 
 // passo 3 - configurando um documento 
 const personDoc = {
@@ -47,3 +44,16 @@ const persons = PersonModel.find()
   .catch (error => {
     console.log(error)
   });
+
+// passo 6 - criando rotas
+app.get('/', (request, response) => {
+  response.send('Minha primeira rota');
+});
+
+app.listen(3000, 'localhost', (error) => {
+  if (error) {
+    console.log('Erro ao subir o servidor na porta 3000');
+  } else {
+    console.log('App rodando na porta 3000');
+  }
+});
