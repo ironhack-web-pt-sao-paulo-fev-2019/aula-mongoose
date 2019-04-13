@@ -1,0 +1,11 @@
+<div class="update">
+  <form action="/person/update/{{this.0._id}}" method="POST">
+    <label for="name">Nome</label>
+    <input type="text" value="{{this.0.name}}" name="name">
+    <label for="age">idade</label>
+    <input type="text" value="{{this.0.age}}" name="age">
+    <label for="gender">Gênero</label>
+    <input type="text" value="{{this.0.gender}}" name="gender">
+    <button type="submit">Atualizar</button>
+  </form>
+</div>

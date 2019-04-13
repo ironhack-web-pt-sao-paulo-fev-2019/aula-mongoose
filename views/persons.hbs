@@ -1,5 +1,9 @@
 <div class="cards-container">
-  {{#each data}}
-      {{> person this}}
-  {{/each}}
+  {{#if data}}
+    {{#each data}}
+        {{> person this}}
+    {{/each}}
+  {{else}}
+    <a href="/">Criar Pessoa</a>
+  {{/if}}
 </div>

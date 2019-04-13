@@ -1,0 +1,10 @@
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.person {
+  padding: 0 3%;
+  box-sizing: border-box;
+}

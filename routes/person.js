@@ -12,9 +12,10 @@ const readPerson = require('../controller/Person/read');
 app.get('/person/read', readPerson);
 
 // rota de update
-const updatePerson = require('../controller/Person/update');
+const { findPerson, updatePerson } = require('../controller/Person/update');
 
-app.get('/person/update/:personId', updatePerson);
+app.get('/person/update/:personId', findPerson);
+app.post('/person/update/:personId', updatePerson);
 
 // rota de deletar
 const deletePerson = require('../controller/Person/delete');
