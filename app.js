@@ -5,6 +5,8 @@ const dbName = 'paul-aula-mongoose';
 const PersonModel = require ('./model/Person/PersonModel');
 const createPerson = require ('./routes/Person/create');
 const readPerson = require ('./routes/Person/read');
+const updatePerson = require ('./routes/Person/update');
+const deletePerson = require ('./routes/Person/delete');
 
 
 // Passo 1 - Conectamos ao banco de dados
@@ -16,17 +18,7 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
     }
 });
 
-// Passo 2 - Configuramos o model da collection Person
-
-// Passo 3 - Configurando um documento
-
-// Passo 4 - Criando um documento
-
-//Passo 5 - Consultamos dados do banco
-
-//Passo 6 - Criando rotas
-
-// HOME
+// Rota para home
 app.get('/', (request, response) => {
     response.send('Minha primeira rota');
 });
@@ -36,6 +28,13 @@ app.get('/person/create', createPerson);
 
 // R - Rota para ler
 app.get('/person/read', readPerson);
+
+// U - Rota para atualizar
+app.get('/person/update/:personId', updatePerson);
+
+// D - Rota para apagar
+app.get('/person/delete/:personId', deletePerson);
+
 
 
 app.listen(3000, 'localhost', (error) => {
