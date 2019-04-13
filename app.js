@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const createPerson = require('./routes/Person/create');
-const readPerson = require('./routes/Person/read');
+const createPerson = require('./controllers/Person/create');
+const readPerson = require('./controllers/Person/read');
 //const updatePerson = require('./routes/Person/update');
 //const deletePerson = require('./routes/Person/delete');
 
