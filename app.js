@@ -4,10 +4,10 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 
 const PersonModel = require('./model/Person/PersonModel');
-const createPerson = require('./routes/Person/create');
-const readPerson = require('./routes/Person/read');
-const updatePerson = require('./routes/Person/update');
-const deletePerson = require('./routes/Person/delete');
+const createPerson = require('./controller/Person/create');
+const readPerson = require('./controller/Person/read');
+const updatePerson = require('./controller/Person/update');
+const deletePerson = require('./controller/Person/delete');
 
 
 const dbName = 'aula-mongoose';
