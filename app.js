@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const hbs = require('hbs');
 const mongoose = require('mongoose');
@@ -20,21 +21,9 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
 // passo 2 - configurar o model
 const PersonModel = require('./model/Person/PersonModel');
 
-// passo 3 - configurando um documento 
-const personDoc = {
-  name: 'Marcelo',
-  age: 32,
-  gender: 'Masculino',
-};
+// passo 3 - configurando um documento
 
 // passo 4 - criando um documento
-PersonModel.create(personDoc, (error) => {
-  if (error) {
-    console.log(`Erro ao criar o documento: ${error}`);
-  } else {
-    console.log(`Salvamos o documento: ${personDoc}`);
-  }
-});
 
 // passo 5 - procurando pelos documentos
 const persons = PersonModel.find()
@@ -46,8 +35,18 @@ const persons = PersonModel.find()
   });
 
 // passo 6 - criando rotas
+// rota de home
 app.get('/', (request, response) => {
   response.send('Minha primeira rota');
+});
+
+// rota pra criar
+const createPerson = require('./routes/Person/create');
+
+app.get('/person/create', createPerson);
+
+app.get('/person/read', (request, response) => {
+  response.send('Persons read');
 });
 
 app.listen(3000, 'localhost', (error) => {
