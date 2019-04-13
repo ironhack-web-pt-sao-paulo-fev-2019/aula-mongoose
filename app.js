@@ -1,5 +1,7 @@
+const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const PersonModel = require('./model/Person/PersonModel');
 const dbName = 'aula-mongoose'
 
 // Passo 1 - Conectamos ao banco de dados
@@ -12,15 +14,6 @@ if(error){
 }
 
 });
-
-// Passo 2 - configurar model
-const PersonModel = mongoose.model('Person', new Schema({
-
-    name:String,
-    age:String,
-    gender:String
-
-}));
 
 // Pass 3 - criando um documento na collection
 const personDoc = {
@@ -40,7 +33,7 @@ PersonModel.create(personDoc,(error) =>{
 })
 
 //Passo 5  encontrando um registro no bando de dados
-const person =  PersonModel.find({})
+const person =  PersonModel.find()
     .then(data =>{
 
         console.log(data);
@@ -51,3 +44,10 @@ const person =  PersonModel.find({})
         console.log(error);
     })
 
+// Passo 6 Criando rotas
+
+app.get('/',(request,response) => {
+    response.send('minha primeira rota')    
+})
+
+app.listen(3000)
