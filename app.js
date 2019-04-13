@@ -26,13 +26,6 @@ const PersonModel = require('./model/Person/PersonModel');
 // passo 4 - criando um documento
 
 // passo 5 - procurando pelos documentos
-const persons = PersonModel.find()
-  .then(data => {
-    console.log(data);
-  })
-  .catch (error => {
-    console.log(error)
-  });
 
 // passo 6 - criando rotas
 // rota de home
@@ -45,9 +38,9 @@ const createPerson = require('./routes/Person/create');
 
 app.get('/person/create', createPerson);
 
-app.get('/person/read', (request, response) => {
-  response.send('Persons read');
-});
+const readPerson = require('./routes/Person/read');
+
+app.get('/person/read', readPerson);
 
 app.listen(3000, 'localhost', (error) => {
   if (error) {
