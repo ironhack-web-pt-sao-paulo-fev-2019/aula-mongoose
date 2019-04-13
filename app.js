@@ -12,7 +12,7 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
     }
 });
 
-// Passo 2 - Configuramos o model
+// Passo 2 - Configuramos o model da collection Person
 
 const PersonModel = mongoose.model('Person', new Schema ( {
     name: String,
@@ -20,4 +20,20 @@ const PersonModel = mongoose.model('Person', new Schema ( {
     gender: String,
 }));
 
+// Passo 3 - Configurando um documento
 
+const PersonDoc = {
+    name: 'Paul',
+    age: 18,
+    gender: 'Male'
+}
+
+// Passo 4 - Criando um documento
+
+PersonModel.create(PersonDoc, (error) => {
+    if (error) {
+        console.log(`Erro ao criar documento ${error}`);
+    } else {
+        console.log(`Salvamos o documento: ${PersonDoc}`);
+    }
+});
