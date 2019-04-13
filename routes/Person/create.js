@@ -1,4 +1,4 @@
-const PersonModel = require('../../Person/PersonModel')
+const PersonModel = require('../../model/Person/PersonModel')
 
 const createPerson = (request,response) =>{
 

@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const PersonModel = require('./model/Person/PersonModel');
-const createPerson = require('./model/routes/Person/create')
+const createPerson = require('./routes/Person/create')
+const readPerson = require('./routes/Person/read')
 const dbName = 'aula-mongoose'
 
 // Passo 1 - Conectamos ao banco de dados
@@ -15,20 +16,11 @@ if(error){
 }
 });
 
-//Passo 5  encontrando um registro no bando de dados
-
-// Passo 6 Criando rotas
-
 app.get('/',(request,response) => {
     response.send('minha primeira rota')    
 })
-
 app.get('/person/create',createPerson)
 
-app.get('/person/read',(request,response) =>{
-
-    response.send("estou na leitura");
-    
-})
+app.get('/person/read',readPerson)
 
 app.listen(3000)
