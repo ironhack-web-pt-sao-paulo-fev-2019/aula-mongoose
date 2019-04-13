@@ -1,10 +1,11 @@
 const PersonModel = require('../../model/Person/PersonModel');
+const { bodyParser } = require('../../config');
 
 const createPerson = (request, response) => {
   const personDoc = {
-    name: 'Marcelo',
-    age: 32,
-    gender: 'Masculino',
+    name: request.body.name,
+    age: request.body.age,
+    gender: request.body.gender,
   };
 
   PersonModel.create(personDoc, (error) => {
@@ -15,7 +16,7 @@ const createPerson = (request, response) => {
     }
   });
 
-  response.send('Persons created');
+  response.send('Person created');
 };
 
 module.exports = createPerson;

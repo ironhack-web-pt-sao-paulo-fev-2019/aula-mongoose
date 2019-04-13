@@ -1,7 +1,7 @@
 const { app } = require('../config');
 
 app.get('/', (request, response) => {
-  response.send('Minha primeira rota');
+  response.render('index');
 });
 
 module.exports = app;

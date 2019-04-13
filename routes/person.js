@@ -1,9 +1,10 @@
-const { app } = require('../config');
+const { app, hbs, bodyParser } = require('../config');
 
 // rota pra criar
 const createPerson = require('../controller/Person/create');
 
-app.get('/person/create', createPerson);
+// app.get('/person/create', createPerson);
+app.post('/person/create', createPerson);
 
 // rota de leitura
 const readPerson = require('../controller/Person/read');
