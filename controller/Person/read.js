@@ -1,14 +1,12 @@
 const PersonModel = require('../../model/Person/PersonModel');
 
 const readPerson = (request, response) => {
-  const persons = PersonModel.find()
-  .then(data => {
-    console.log(data);
-    response.send(JSON.stringify(data));
-  })
-  .catch (error => {
-    console.log(error)
-  });
-};
+  
+    const persons = PersonModel.find()
+    .then(data => 
+        response.send(JSON.stringify(data)))
+    .catch(err => console.log(err));
+}
+
 
 module.exports = readPerson;

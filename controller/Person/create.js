@@ -1,21 +1,22 @@
 const PersonModel = require('../../model/Person/PersonModel');
 
-const createPerson = (request, response) => {
-  const personDoc = {
-    name: 'Marcelo',
-    age: 32,
-    gender: 'Masculino',
-  };
-
-  PersonModel.create(personDoc, (error) => {
-    if (error) {
-      console.log(`Erro ao criar o documento: ${error}`);
-    } else {
-      console.log(`Salvamos o documento: ${personDoc}`);
+const createPerson = (request,response) => {
+    const personDoc = {
+        name: 'Sany Chernizon',
+        age: 27,
+        gender: 'M'
     }
-  });
+    
+    PersonModel.create(personDoc, (err) => {
+        if (err) {
+            console.log(`Não deu certo, erro: ${err}`)
+        } else {
+            console.log(`Documento ${personDoc} salvo!`)
+        }
+    })
 
-  response.send('Persons created');
-};
+    response.send('Create certo')
+}
 
 module.exports = createPerson;
+
