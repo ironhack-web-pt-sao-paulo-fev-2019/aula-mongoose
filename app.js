@@ -18,12 +18,12 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
 
 // passo 2 - configurar o model
 const PersonModel = mongoose.model('Person', new Schema({
-  name: String,
+  name: { type: String, unique: true },
   age: Number,
   gender: String,
 }));
 
-// passo 3 - Configurando um documento 
+// passo 3 - configurando um documento 
 const personDoc = {
   name: 'Marcelo',
   age: 32,
@@ -38,3 +38,12 @@ PersonModel.create(personDoc, (error) => {
     console.log(`Salvamos o documento: ${personDoc}`);
   }
 });
+
+// passo 5 - procurando pelos documentos
+const persons = PersonModel.find()
+  .then(data => {
+    console.log(data);
+  })
+  .catch (error => {
+    console.log(error)
+  });
