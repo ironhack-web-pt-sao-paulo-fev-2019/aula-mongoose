@@ -15,7 +15,7 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
 // Passo 2 - Configuramos o model da collection Person
 
 const PersonModel = mongoose.model('Person', new Schema ( {
-    name: String,
+    name: {type: String, unique: true},
     age: Number,
     gender: String,
 }));
@@ -36,4 +36,13 @@ PersonModel.create(PersonDoc, (error) => {
     } else {
         console.log(`Salvamos o documento: ${PersonDoc}`);
     }
+});
+
+//Passo 5 - Consultamos dados do banco
+const persons = PersonModel.find()
+.then(personsData => {
+    console.log(personsData);
+})
+.catch (error => {
+    console.log(error);
 });
