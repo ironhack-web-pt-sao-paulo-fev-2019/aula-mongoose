@@ -1,0 +1,11 @@
+<tr>
+  <td>{{this.name}}</td>
+  <td>{{this.age}}</td>
+  <td>{{this.gender}}</td>
+  <td>
+    <form action="/person/update/{{this._id}}" method="get"><button class="btn-artist btn btn-secondary"
+        type="submit">Atualizar</button></form>
+    <form action="/person/delete/{{this._id}}" method="get"><button class="btn-artist btn btn-secondary"
+        type="submit">Apagar</button></form>
+  </td>
+</tr>

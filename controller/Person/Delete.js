@@ -1,5 +1,12 @@
 const PersonModel = require('../../model/Person/PersonModel');
 const deletePerson = (request, response) => {
-  response.send(`Estou na rota de Delete`);
+  let personId = request.params.personId;
+  PersonModel.deleteOne({_id: personId})
+  .then(() => {
+    response.send(`Sucesso ${personId} apagado!`);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 }
 module.exports = deletePerson;

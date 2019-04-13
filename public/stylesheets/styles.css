@@ -1,0 +1,25 @@
+/* * {
+  border: solid 1px black;
+} */
+
+.sm2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.bt-containeer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 2em;
+}
+
+.btn-action {
+  margin: 2em;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+}

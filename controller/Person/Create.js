@@ -1,11 +1,8 @@
 const PersonModel = require('../../model/Person/PersonModel');
 
 const createPerson = (request, response) => {
-  const personDoc = {
-    name: 'Pablo Escobar',
-    age: '40',
-    gender: 'M'
-  };
+  const personDoc = request.body;
+  console.log(personDoc);
   PersonModel.create(personDoc, (error) => {
     if (error) {
       console.log(`Erro ao criar documento ${error}`);
