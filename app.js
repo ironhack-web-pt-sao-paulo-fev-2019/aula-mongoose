@@ -13,7 +13,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`, (error) => {
 
 // Passo 2 - Configurar Model
 const PersonModel = mongoose.model('Person', new Schema({
-  name: String,
+  name: { type: String,  index: { unique: true } },
   age: Number,
   gender: String
 }));
@@ -21,7 +21,7 @@ const PersonModel = mongoose.model('Person', new Schema({
 // Passo 3 - Configurando um documento
 const personDoc = {
   name: 'José Luiz',
-  age: 18,
+  age: 19,
   gender: 'M'
 };
 
@@ -33,3 +33,13 @@ PersonModel.create( personDoc, (error) => {
     console.log(`Salvamos o documento: ${personDoc}`);
   }
 });
+
+// Passo 5 - Consultando dados do banco
+const persons = PersonModel.find()
+  .then(personsData => {
+    console.log(personsData);
+  })
+  .catch( error => {
+    console.log(error);
+  });
+
