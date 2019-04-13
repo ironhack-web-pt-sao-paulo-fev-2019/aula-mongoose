@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const dbName = 'paul-aula-mongoose';
 
@@ -10,4 +11,13 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
         console.log (`CONECTAMOS EM ${dbName}`);
     }
 });
+
+// Passo 2 - Configuramos o model
+
+const PersonModel = mongoose.model('Person', new Schema ( {
+    name: String,
+    age: Number,
+    gender: String,
+}));
+
 
