@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dbName = 'fred-aula-mongoose';
+const hbs = require('hbs');
+
+app.set('view engine', 'hbs');
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
+
 
 mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
   if (error) {
@@ -13,6 +19,7 @@ mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
 
 
 module.exports = {
-    app,
-    mongoose
+  app,
+  mongoose,
+  hbs
 };
