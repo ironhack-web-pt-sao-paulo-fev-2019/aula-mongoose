@@ -1,0 +1,24 @@
+{
+  "name": "aula-mongoose",
+  "version": "1.0.0",
+  "description": "Material colaborativo produzido durante a aula",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-mongoose.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-mongoose/issues"
+  },
+  "homepage": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-mongoose#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "mongoose": "^5.5.1"
+  }
+}
