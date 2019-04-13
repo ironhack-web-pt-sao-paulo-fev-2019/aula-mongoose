@@ -14,9 +14,25 @@ mongoose.connect(`mongodb://localhost/${dbName}`, (err) => {
     }
 })
 
-//Passo 2 - configurar Model
+// Passo 2 - configurar Model
 const PersonModel = mongoose.model('Person', new Schema({
     name: String,
     age: Number,
     gender: String
 }));
+
+// Passo 3 - Configurando um documento
+const personDoc = {
+    name: 'Sany Chernizon',
+    age: 27,
+    gender: 'M'
+}
+
+// Passo 4 - Criando um documento
+PersonModel.create(personDoc, (err) => {
+    if (err) {
+        console.log(`Não deu certo, erro: ${err}`)
+    } else {
+        console.log(`Documento ${personDoc} salvo!`)
+    }
+})
