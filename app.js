@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const dbName = "aula-mongoose";
-const Schema = mongoose.Schema;
+
+const PersonModel = require('./model/Person/PersonModel');
 
 // Passo 1 - Conectamos ao banco de dados
 mongoose.connect(`mongodb://localhost/${dbName}`, error => {
@@ -12,14 +13,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`, error => {
 });
 
 //Passo 2 - Configurar o model
-const PersonModel = mongoose.model(
-  "Person",
-  new Schema({
-    name: String,
-    age: String,
-    gender: String
-  })
-);
+
 
 //Passo 3 - Configurando um documento
 const personDoc = {
