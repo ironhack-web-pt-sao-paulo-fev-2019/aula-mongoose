@@ -18,4 +18,18 @@ const PersonModel = mongoose.model('Person', new Schema({
   gender: String
 }));
 
+// Passo 3 - Configurando um documento
+const personDoc = {
+  name: 'José Luiz',
+  age: 18,
+  gender: 'M'
+};
 
+// Passo 4 - Criando documento
+PersonModel.create( personDoc, (error) => {
+  if (error) {
+    console.log(`Erro ao criar documento ${error}`);
+  } else {
+    console.log(`Salvamos o documento: ${personDoc}`);
+  }
+});
