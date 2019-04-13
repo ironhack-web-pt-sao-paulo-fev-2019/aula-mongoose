@@ -14,6 +14,8 @@ const createPerson = (request,response) => {
             console.log(`Documento ${personDoc} salvo!`)
         }
     })
+
+    response.send('Create certo')
 }
 
 module.exports = createPerson;
