@@ -36,3 +36,16 @@ PersonModel.create(personDoc, error => {
     console.log(`Salvamos o documento: ${personDoc}`);
   }
 });
+
+//Passo 5 - p
+
+const persons = PersonModel.find()
+.then(data => 
+  {
+    console.log(data);
+  })
+  .catch( error => { 
+    console.log(error)
+  });
+
+console.log(persons);
