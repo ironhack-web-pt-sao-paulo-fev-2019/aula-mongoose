@@ -31,7 +31,6 @@ const personDoc = {
 }
 
 // Passo w - Criando um documento
-
 PersonModel.create(personDoc,(error) =>{
     if(error){
         console.log(`Erro ao criar documento ${error} `)
@@ -39,4 +38,16 @@ PersonModel.create(personDoc,(error) =>{
         console.log(`Salvamos o documento: ${personDoc}`)
     }
 })
+
+//Passo 5  encontrando um registro no bando de dados
+const person =  PersonModel.find({})
+    .then(data =>{
+
+        console.log(data);
+
+    })
+    .catch(error =>{
+
+        console.log(error);
+    })
 
