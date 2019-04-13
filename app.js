@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dbName = 'paul-aula-mongoose';
 const PersonModel = require ('./model/Person/PersonModel');
 const createPerson = require ('./routes/Person/create');
+const readPerson = require ('./routes/Person/read');
 
 
 // Passo 1 - Conectamos ao banco de dados
@@ -34,9 +35,7 @@ app.get('/', (request, response) => {
 app.get('/person/create', createPerson);
 
 // R - Rota para ler
-app.get('/person/read', (request, response) => {
-    response.send('Estou na rota de leitura');
-});
+app.get('/person/read', readPerson);
 
 
 app.listen(3000, 'localhost', (error) => {
