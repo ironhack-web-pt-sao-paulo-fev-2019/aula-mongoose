@@ -1,0 +1,16 @@
+   <div class="text-form">
+      <h1>List Person</h1>
+   </div>
+   <br><br>
+<table id="customers">
+        <th>Nome</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+     {{#each data }}
+     {{>list this}}
+      {{/each}}
+
+  </table>

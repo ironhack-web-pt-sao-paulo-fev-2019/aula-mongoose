@@ -3,8 +3,8 @@ const PersonModel = require('../../model/Person/PersonModel');
 const readPerson = (request, response) => {
   
     const persons = PersonModel.find()
-    .then(data => 
-        response.send(JSON.stringify(data)))
+    .then((data) => 
+        response.render('list',{data}))
     .catch(err => console.log(err));
 }
 

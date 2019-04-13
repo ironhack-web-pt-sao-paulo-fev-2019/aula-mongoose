@@ -1,7 +1,8 @@
-
+const PersonModel = require('../../model/Person/PersonModel');
 const updatePerson = (request, response) => {
-    response.send('Estou na rota de UPDATE')
 
+ 
+    
 }
 
 module.exports = updatePerson;

@@ -14,7 +14,7 @@ const createPerson = (request,response) => {
         }
     })
 
-    response.send('Create certo')
+    response.redirect('/person/read')
 }
 
 module.exports = createPerson;
