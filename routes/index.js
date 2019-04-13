@@ -5,11 +5,12 @@ const updatePerson = require('../controller/Person/update');
 const deletePerson = require('../controller/Person/delete');
 
 app.get('/', (request, response) => {
-  response.send('Minha primeira rota');
+  response.render('index');
 });
 
 // C - Rota para criar
-app.get('/person/create', createPerson);
+app.post('/person/create', createPerson);
+// app.get('/person/create', createPerson);
 
 // R - Rota para ler
 app.get('/person/read', readPerson);

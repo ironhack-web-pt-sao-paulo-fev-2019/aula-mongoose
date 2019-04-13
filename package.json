@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-mongoose#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
-    "mongoose": "^5.5.1"
+    "mongoose": "^5.5.1",
+    "nodemon": "^1.18.11"
   }
 }
