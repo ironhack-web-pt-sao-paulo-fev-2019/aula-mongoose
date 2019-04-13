@@ -1,25 +1,6 @@
-const express = require('express');
-
-const app = express();
-const hbs = require('hbs');
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
-// ou const {Schema} = mongoose.Schema
-
 // passo 1 - conectamos ao banco de dados
-const dbName = 'marcelo-aula-mongoose';
-
-mongoose.connect(`mongodb://192.168.0.26/${dbName}`, (error) => {
-  if (error) {
-    console.log('Não consegui conectar');
-  } else {
-    console.log(`CONECTAMOS EM ${dbName}`);
-  }
-});
 
 // passo 2 - configurar o model
-const PersonModel = require('./model/Person/PersonModel');
 
 // passo 3 - configurando um documento
 
@@ -28,30 +9,10 @@ const PersonModel = require('./model/Person/PersonModel');
 // passo 5 - procurando pelos documentos
 
 // passo 6 - criando rotas
-// rota de home
-app.get('/', (request, response) => {
-  response.send('Minha primeira rota');
-});
 
-// rota pra criar
-const createPerson = require('./controller/Person/create');
+const { app } = require('./config');
 
-app.get('/person/create', createPerson);
-
-// rota de leitura
-const readPerson = require('./controller/Person/read');
-
-app.get('/person/read', readPerson);
-
-// rota de update
-const updatePerson = require('./controller/Person/update');
-
-app.get('/person/update/:personId', updatePerson);
-
-// rota de deletar
-const deletePerson = require('./controller/Person/delete');
-
-app.get('/person/delete/:personId', deletePerson);
+const Routes = require('./routes');
 
 app.listen(3000, 'localhost', (error) => {
   if (error) {
