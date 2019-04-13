@@ -1,23 +1,27 @@
-const { app } = require('../config');
+const express = require('express');
+const config = require('../config');
+let router = express.Router();
+const createPerson = require('../controllers/Person/create');
+const readPerson = require('../controllers/Person/read');
+const updatePerson = require('../controllers/Person/update');
+const deletePerson = require('../controllers/Person/delete');
+const home = require('../controllers/Person/home');
 
-// rota pra criar
-const createPerson = require('../controller/Person/create');
+router
+    .route('/')
+    .get(home)
 
-app.get('/person/create', createPerson);
+router
+    .route('/person/create')
+    .get(createPerson);
+router
+    .route('/person/read')
+    .get(readPerson);
+router
+    .route('/person/update/:personid')
+    .get(updatePerson);
+router
+    .route('/person/delete/:personId')
+    .get(deletePerson);
 
-// rota de leitura
-const readPerson = require('../controller/Person/read');
-
-app.get('/person/read', readPerson);
-
-// rota de update
-const updatePerson = require('../controller/Person/update');
-
-app.get('/person/update/:personId', updatePerson);
-
-// rota de deletar
-const deletePerson = require('../controller/Person/delete');
-
-app.get('/person/delete/:personId', deletePerson);
-
-module.exports = app;
+module.exports = {router,config};

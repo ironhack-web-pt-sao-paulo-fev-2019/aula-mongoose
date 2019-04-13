@@ -7,14 +7,15 @@ const readPerson = require('../controller/Person/read');
 const updatePerson = require('../controller/Person/update');
 const deletePerson = require('../controller/Person/delete');
 
+
 const HomeController = (request, response) => {
-    response.send('Minha rota')
+    response.render('form')
 }
 
 app.get('/', HomeController);
 
 // C - Rota para criar
-app.get('/person/create', createPerson);
+app.post('/person/create', createPerson);
 
 // R - Rota para ler
 app.get('/person/read', readPerson);
