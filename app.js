@@ -1,3 +1,4 @@
+
 // passo 1 - conectamos ao banco de dados
 
 // passo 2 - configurar o model
