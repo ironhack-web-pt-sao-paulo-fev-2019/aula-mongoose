@@ -13,18 +13,10 @@ const HomeController = (request, response) => {
 }
 
 app.get('/', HomeController);
-
-// C - Rota para criar
 app.post('/person/create', createPerson);
-
-// R - Rota para ler
 app.get('/person/read', readPerson);
-
-// U - Rota para atualizar
 app.get('/person/getperson/:personId', listPersonId);
 app.post('/person/update/', updatePerson);
-
-// d - Rota para atualizar
 app.get('/person/delete/:personId', deletePerson);
 
 module.exports = app;

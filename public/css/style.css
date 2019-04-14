@@ -29,7 +29,8 @@
 
     display: flex;
     justify-content: center;
-    width: 100%
+    margin-left: 100px;
+    
 
   }
 
@@ -44,4 +45,10 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+  }
+  .error-form{
+
+    width: 50%;
+    margin-left:300px;
+    
   }

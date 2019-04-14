@@ -1,20 +1,19 @@
 const PersonModel = require('../../model/Person/PersonModel');
 
 
-const createPerson = (request,response) => {
-
-   
+const createPerson = (request,response,next) => {
    const personObject = request.body
-    
+
     PersonModel.create(personObject, (err) => {
         if (err) {
-            console.log(`Não deu certo, erro: ${err}`)
+            response.render('form',{err})   
         } else {
-            console.log(`Documento ${personObject} salvo!`)
+
+            response.redirect('/person/read');
+           console.log(`Documento ${personObject} salvo!`)
         }
     })
-
-    response.redirect('/person/read')
+    
 }
 
 module.exports = createPerson;
