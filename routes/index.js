@@ -6,7 +6,7 @@ const createPerson = require('../controller/Person/create');
 const readPerson = require('../controller/Person/read');
 const updatePerson = require('../controller/Person/update');
 const deletePerson = require('../controller/Person/delete');
-
+const listPersonId = require('../controller/Person/getPerson')
 
 const HomeController = (request, response) => {
     response.render('form')
@@ -21,7 +21,8 @@ app.post('/person/create', createPerson);
 app.get('/person/read', readPerson);
 
 // U - Rota para atualizar
-app.get('/person/update/:personId', updatePerson);
+app.get('/person/getperson/:personId', listPersonId);
+app.post('/person/update/', updatePerson);
 
 // d - Rota para atualizar
 app.get('/person/delete/:personId', deletePerson);

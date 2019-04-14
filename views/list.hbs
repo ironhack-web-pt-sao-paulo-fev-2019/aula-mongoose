@@ -1,7 +1,7 @@
    <div class="text-form">
       <h1>List Person</h1>
    </div>
-   <br><br>
+   <br><br>  
 <table id="customers">
         <th>Nome</th>
         <th>Age</th>
@@ -14,3 +14,11 @@
       {{/each}}
 
   </table>
+<div class="form-button"> 
+         {{#if data}}
+         {{else}}
+         <a href="/" ><button class="btn btn-primary">Create Person</button></a>
+
+         {{/if}}
+
+</div>
