@@ -1,6 +1,6 @@
 const  app  = require('./routes');
 
-app.listen(3004, 'localhost', (err) => {
+app.listen(3000, 'localhost', (err) => {
   if (err) {
     console.log('Deu ruim na conexao bro');
   } else {

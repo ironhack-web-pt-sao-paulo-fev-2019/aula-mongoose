@@ -1,11 +1,14 @@
-<tr>
-  <td>{{this.name}}</td>
-  <td>{{this.age}}</td>
-  <td>{{this.gender}}</td>
-  <td>
-    <form action="/person/update/{{this._id}}" method="get"><button class="btn-artist btn btn-secondary"
-        type="submit">Atualizar</button></form>
-    <form action="/person/delete/{{this._id}}" method="get"><button class="btn-artist btn btn-secondary"
-        type="submit">Apagar</button></form>
-  </td>
-</tr>
+<div class="row row-read">
+  <div class="col-sm sm1"></div>
+  <div class="col-sm sm2">
+    <div class="gender-list">{{this.name}}</div><br><br><br>
+    <div>{{this.age}}</div><br>
+    <div class="gender-list">{{this.gender}}</div><br>
+    <div><form action="/person/update/{{this._id}}" method="get"><button class="btn-read btn btn-secondary"
+        type="submit">Atualizar</button></form></div>
+    <div><form action="/person/delete/{{this._id}}" method="get"><button class="btn-read btn btn-secondary"
+        type="submit">Apagar</button></form></div>
+  </div>
+  <div class="col-sm sm3">
+  </div>
+</div>

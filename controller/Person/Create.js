@@ -10,6 +10,6 @@ const createPerson = (request, response) => {
       console.log(`Salvamos o documento: ${personDoc}`);
     }
   });
-  response.send('Energumeno Criado');
+  response.render('create2');
 };
 module.exports = createPerson;

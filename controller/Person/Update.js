@@ -1,6 +1,13 @@
 const PersonModel = require('../../model/Person/PersonModel');
 const updatePerson = (request, response) => {
-  console.log(request);
-  response.send(`Estou na rota de Update`)
-}
+  let personId = request.params.personId;
+  PersonModel.findOne({_id: personId})
+  .then((data) => {
+    response.render('update', data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  };
 module.exports = updatePerson
+

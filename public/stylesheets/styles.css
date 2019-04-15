@@ -19,7 +19,18 @@
   margin: 2em;
 }
 
-.table {
-  display: flex;
+.btn-read {
   justify-content: center;
+  align-content: center;
+  margin-left: 2em;
+}
+
+.row-read {
+  display: flex;
+  margin: 1em;
+  margin-left: 1em;
+}
+
+.gender-list {
+  margin-left: 2em;
 }

@@ -1,6 +1,6 @@
 const { app } = require('../config');
 const createPerson = require('../controller/Person/Create');
-const readPerson = require('../controller/Person/Read');
+const savePerson = require('../controller/Person/Save');
 const updatePerson = require('../controller/Person/Update');
 const deletePerson = require('../controller/Person/Delete');
 const formCreate = require('../controller/form/FormCreate');
@@ -25,6 +25,8 @@ app.get('/person/create', createPerson);
 
 //Rota para Update
 app.get('/person/update/:personId', updatePerson);
+app.post('/person/save', savePerson);
+
 
 //Rota para Deletar
 app.get('/person/delete/:personId', deletePerson);
