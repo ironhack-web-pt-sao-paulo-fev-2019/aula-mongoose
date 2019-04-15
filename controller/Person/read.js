@@ -1,10 +1,10 @@
 const PersonModel = require('../../model/Person/PersonModel');
 
 const readPerson = (request, response) => {
-  const persons = PersonModel.find()
+  PersonModel.find()
   .then(personsData => {
     console.log(personsData);
-    response.send(JSON.stringify(personsData));
+    response.render('person/read', {personsData});
   })
   .catch( error => {
     console.log(error);

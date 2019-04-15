@@ -1,7 +1,7 @@
 const { app } = require('../config');
 const createPerson = require('../controller/Person/create');
 const readPerson = require('../controller/Person/read');
-const updatePerson = require('../controller/Person/update');
+const { updatePerson, doUpdatePerson } = require('../controller/Person/update');
 const deletePerson = require('../controller/Person/delete');
 
 app.get('/', (request, response) => {
@@ -17,6 +17,7 @@ app.get('/person/read', readPerson);
 
 // U - Rota para atualizar
 app.get('/person/update/:personId', updatePerson );
+app.post('/person/update/:personId', doUpdatePerson );
 
 // D - Rota para apagar
 app.get('/person/delete/:personId', deletePerson );

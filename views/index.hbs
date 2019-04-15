@@ -1,16 +1,6 @@
+<h1>Adicionar Pessoa</h1>
 <form action="/person/create" method="POST">
-  <fieldset>
-    <label>Nome:</label>
-    <input name="name" />
-  </fieldset>
-  <fieldset>
-    <label>Age:</label>
-    <input name="age" />
-  </fieldset>
-  <fieldset>
-    <label>Gender</label>
-    <input name="gender" maxlength="1">
-  </fieldset>
+{{> personForm}}
   <fieldset>
     <button type="submit">Salvar</button>
   </fieldset>
