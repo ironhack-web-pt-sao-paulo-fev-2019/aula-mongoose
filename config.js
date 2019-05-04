@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const dbName = 'aula-mongoose';
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
+const dbName = 'aula-file-upload';
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
